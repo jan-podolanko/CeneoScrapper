@@ -47,7 +47,7 @@ while url:
     page_tree = BeautifulSoup(page_response.text, 'html.parser')
 
     #4 wydobycie z html fragmentow odpowiadajacych poszczegolnym opiniom
-    opinions = page_tree.find_all('li', 'review-box')
+    opinions = page_tree.find_all('li', 'js_product-review')
 
     #pusta lista na wszysykie opinie
 
@@ -77,8 +77,7 @@ while url:
         url = None
     print(url)
 
-with open(product_id+'.json','w',encoding='utf-8') as fp:
-    json.dump(opinions_list, fp, ensure_ascii = False, indent=4, separators=(',',': '))
+with open("./opinions_json/"+product_id+'.json', 'w', encoding="utf-8") as fp:
+    json.dump(opinions_list, fp, ensure_ascii=False, indent=4, separators=(',', ': '))
 
 print(len(opinions_list))
-#pprint.pprint(opinions_list)

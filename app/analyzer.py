@@ -42,6 +42,3 @@ purchased = opinions["purchased"].sum()
 print(stars_everage, pros, cons, purchased)
 stars_purchased = pd.crosstab(opinions["stars"],opinions["purchased"])
 print(stars_purchased)
-
-
-print(opinions)
