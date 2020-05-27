@@ -6,7 +6,7 @@ from app.models import Opinion, Product
 import requests
 Markdown(app)
 
-app.config['SECRET_KEY'] = "TajemniczyMysiSprzęt"
+app.config['SECRET_KEY'] = "idk"
 
 @app.route('/')
 @app.route('/index')
@@ -29,9 +29,10 @@ def extract():
         if page_respons.status_code == requests.codes['ok']:
             product = Product(product_id)
             product.extract_product()
+            product.save_product()
             return redirect(url_for("product", id=product_id))
         else:
-            form.product_id.errors.append("Podana wartość nie jest poprawnym kodem ptoduktu.")
+            form.product_id.errors.append("Podana wartość nie jest poprawnym kodem produktu.")
     return render_template("extract.html", form=form)
 
 @app.route('/product/<id>')
