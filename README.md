@@ -7,21 +7,47 @@
 - gwiazdki: span.review-score-count
 - potwierdzona zakupem: div.product-review-pz
 - data wystawienia: span.review-time > time["datetime"] - pierwszy element listy
-- data zakupu: span.review-time > time["datetime"] - drugi element listy(o ile istnieje)
+- data zakupu: span.review-time > time["datetime"] - drugi element listy
 - przydatna: span[id=^votes-yes]
-    lub        button.vote-yes["data-total-vote"]
-    lub        button.vote-yes > span
+             button.vote-yes["data-total-vote"]
+             button.vote-yes > span
 - nieprzydatna: span[id=^votes-no]
-    lub        button.vote-no["data-total-vote"]
-    lub        button.vote-no > span
+                button.vote-no["data-total-vote"]
+                button.vote-no > span
 - treść: p.product-review-body
 - wady: div.cons-cell > ul
 - zalety: div.pros-cell > ul
-## Etap 2 - pobranie skladowych WSZYSTKIch opinii z pojedynczej strony
-- zapisanie składowych opinii w zlozonej strukturze danych
+## Etap 2 - pobranie składowych wszystkich opinii z poedynczej strony
+- zapisanie składowych opinii w złożonej strukturze danych
 ## Etap 3 - pobranie wszystkich opinii o pojedynczym produkcie
-- przechodzenie po stronach z opiniami 
-- eksport opinii do pliku (.csv lub .xlsx lub .json)
+- przechodzenie po stronach z opiniami
+- eksport opinii do pliku (.csv. lub .xlsx lub .json)
 ## Etap 4
 - transformacja danych
 - refaktoryzacja kodu
+## Etap 5
+- zapis danych do obiektu dataframe (ramka danych)
+- wykonamie podstawowych obliczeń na danych w ramce danych
+- wykonanie prostych wykresów na podstawie danych w ramce danych
+## Etap 6 - przygotowanie interfajsu webowego aplikcaji (Flask)
+- struktura aplikacji
+>    /CeneoScraper/  
+>>        /run.py  
+>>        /config.py  
+>>        /app/  
+>>>            /__init__.py
+>>>            /views.py  
+>>>            /models.py 
+>>>            /scraper.py
+>>>            /analyzer.py 
+>>>            /opinions_json
+>>>            /static/  
+>>>>                /figures_png
+>>>>                /main.css
+>>>            /templates/  
+>>>>                /layout.html  
+>>>        /requirements.txt  
+>>>        /README.md
+>>>        /.venv/
+- widoki (Jinja)
+- routingi

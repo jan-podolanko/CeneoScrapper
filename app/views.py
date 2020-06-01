@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 Markdown(app)
 
-app.config['SECRET_KEY'] = "TajemniczyMysiSprzęt"
+app.config['SECRET_KEY'] = "TajneSzczurzeUrządzenie"
 
 @app.route('/')
 @app.route('/index')
