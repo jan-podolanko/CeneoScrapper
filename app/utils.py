@@ -5,7 +5,7 @@ def remove_whitespaces(string):
     except AttributeError:
         pass
 
-
+#funkcja do ekstrakcji elementow
 def extract_element(dom_tree, tag, tag_class, child=None):
     try:
         if child:
